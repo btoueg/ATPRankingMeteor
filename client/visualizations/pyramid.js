@@ -43,23 +43,20 @@ Template.body.onRendered(function(){
     Deps.autorun(function(){
         console.log("autorun...");
 
-        var csv = MenSingles.find().fetch();
+        var cursor = MenSingles.find({date:Session.get('ranking_date')});
 
-        if (csv.length == 0) {
+        console.log(cursor.count());
+
+        if (cursor.count() < 499) {
             return;
         }
 
         var data = d3.nest()
-            .key(function(d) {return d.date;})
-            .sortKeys(d3.descending)
             .sortValues(function(a,b) { return a.ranking - b.ranking; })
-            .map(csv, d3.map);
-
-        var ranking_date = Session.get('ranking_date') || data.keys()[0];
-        var cursor = data.get(ranking_date);
+            .map(cursor.fetch(), d3.map);
 
         var images = svg.selectAll("image")
-            .data(cursor, function(d) { return d.name; });
+            .data(data, function(d) { return d.name; });
         images.select("title").text(function(d) { return get_title(d); });
         images.transition()
             .transition()
