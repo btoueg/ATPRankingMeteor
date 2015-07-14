@@ -1,0 +1,11 @@
+<head>
+    <title>ATP Ranking</title>
+</head>
+<body>
+    {{> pyramid}}
+    <select>
+        {{#each options}}
+            <option value="{{value}}">{{label}}</option>
+        {{/each}}
+    </select>
+</body>
