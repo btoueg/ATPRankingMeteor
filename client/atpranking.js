@@ -8,7 +8,7 @@ Template.body.helpers({
 
 Template.body.events({
     'change select': function(evt) {
-        Session.set('period', evt.target.value)
+        Session.set('ranking_date', moment(evt.target.value, "DD.MM.YYYY").toDate())
     }
 });
 
@@ -17,6 +17,6 @@ Meteor.startup(function () {
     Meteor.subscribe("atp_men_singles_ranking");
 
     Deps.autorun(function(){
-        Meteor.subscribe("atp_men_singles_ranking", Session.get('period'));
+        Meteor.subscribe("atp_men_singles_ranking", Session.get('ranking_date'));
     })
 });

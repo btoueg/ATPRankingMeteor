@@ -32,8 +32,6 @@ Template.body.onRendered(function(){
         return d.name + " (" + d.ranking + "), " + d.country;
     }
 
-    var in_format = d3.time.format("%d.%m.%Y");
-
     var x = d3.scale.linear()
         .domain([0,40])
         .range([0,width - margin.left - margin.right]);
@@ -47,23 +45,18 @@ Template.body.onRendered(function(){
 
         var csv = MenSingles.find().fetch();
 
-        csv.forEach(function(line) {
-            line.ranking = parseInt(line.ranking);
-            line.date = in_format.parse(line.date);
-        });
-
         if (csv.length == 0) {
             return;
         }
 
         var data = d3.nest()
-            .key(function(d) {return in_format(d.date);})
+            .key(function(d) {return d.date;})
             .sortKeys(d3.descending)
             .sortValues(function(a,b) { return a.ranking - b.ranking; })
             .map(csv, d3.map);
 
-        var period = Session.get('period') || data.keys()[0];
-        var cursor = data.get(period);
+        var ranking_date = Session.get('ranking_date') || data.keys()[0];
+        var cursor = data.get(ranking_date);
 
         var images = svg.selectAll("image")
             .data(cursor, function(d) { return d.name; });

@@ -1,8 +1,8 @@
 
 Meteor.startup(function () {
 
-    Meteor.publish("atp_men_singles_ranking", function (period) {
-        return MenSingles.find({date:period});
+    Meteor.publish("atp_men_singles_ranking", function (ranking_date) {
+        return MenSingles.find({date:ranking_date});
     });
 
     if (MenSingles.find().count() === 0) {
@@ -17,6 +17,8 @@ Meteor.startup(function () {
 
             output.forEach(function(record) {
                 if (s(record.date).endsWith('08.2014')) {
+                    record.ranking = parseInt(record.ranking);
+                    record.date = moment(record.date, "DD.MM.YYYY").toDate();
                     MenSingles.insert(record);
                 }
             })
