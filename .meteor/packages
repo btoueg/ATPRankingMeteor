@@ -10,3 +10,9 @@ d3js:d3
 csats:csv-parse
 momentjs:moment
 underscorestring:underscore.string
+http
+meteorhacks:npm
+
+
+npm-container
+underscore

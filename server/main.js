@@ -1,5 +1,6 @@
 
 Meteor.startup(function () {
+    cheerio = Meteor.npmRequire('cheerio');
 
     Meteor.publish("atp_men_singles_ranking", function (ranking_date) {
         return MenSingles.find({date:ranking_date});
