@@ -2,6 +2,7 @@
 Template.body.helpers({
     options: [
         {value: '04.08.2014', label: '04/08/2014'},
+        {value: '18.08.2014', label: '18/08/2014'},
         {value: '25.08.2014', label: '25/08/2014'}
     ]
 });

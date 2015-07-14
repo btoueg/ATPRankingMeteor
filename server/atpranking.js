@@ -16,11 +16,9 @@ Meteor.startup(function () {
             }
 
             output.forEach(function(record) {
-                if (s(record.date).endsWith('08.2014')) {
-                    record.ranking = parseInt(record.ranking);
-                    record.date = moment(record.date, "DD.MM.YYYY").toDate();
-                    MenSingles.insert(record);
-                }
+                record.ranking = parseInt(record.ranking);
+                record.date = moment(record.date, "DD.MM.YYYY").toDate();
+                MenSingles.insert(record);
             })
         });
     }
