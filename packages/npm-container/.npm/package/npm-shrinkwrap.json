@@ -74,6 +74,9 @@
           "version": "3.10.0"
         }
       }
+    },
+    "underscore": {
+      "version": "1.8.3"
     }
   }
 }

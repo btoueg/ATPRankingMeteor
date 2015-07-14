@@ -1,23 +1,30 @@
 
 Template.body.helpers({
-    options: [
-        {value: '04.08.2014', label: '04/08/2014'},
-        {value: '18.08.2014', label: '18/08/2014'},
-        {value: '25.08.2014', label: '25/08/2014'}
-    ]
+    options: RankingDates.find({}, {
+        sort: {rankDate:-1},
+        transform: function(doc) {
+            doc.value = moment(doc.rankDate).format('DD.MM.YYYY');
+            doc.label = moment(doc.rankDate).format('DD-MM-YYYY');
+            return doc;
+        }
+    })
 });
 
 Template.body.events({
     'change select': function(evt) {
-        Session.set('ranking_date', moment(evt.target.value, "DD.MM.YYYY").toDate())
+        Session.set('rankDate', moment(evt.target.value, "DD.MM.YYYY").toDate())
     }
 });
 
 Meteor.startup(function () {
 
     Meteor.subscribe("atp_men_singles_ranking");
+    Meteor.subscribe("atp_men_singles_ranking_dates");
 
     Deps.autorun(function(){
-        Meteor.subscribe("atp_men_singles_ranking", Session.get('ranking_date'));
+        // change subscription
+        Meteor.subscribe("atp_men_singles_ranking", Session.get('rankDate'));
+        // make sure we have the data scraped
+        Meteor.call('refreshRanking', Session.get('rankDate'));
     })
 });

@@ -43,7 +43,7 @@ Template.body.onRendered(function(){
     Deps.autorun(function(){
         console.log("autorun...");
 
-        var cursor = MenSingles.find({date:Session.get('ranking_date')});
+        var cursor = MenSingles.find({rankDate:Session.get('rankDate')});
 
         console.log(cursor.count());
 
