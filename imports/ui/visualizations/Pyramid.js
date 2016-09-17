@@ -106,6 +106,11 @@ class Pyramid extends Component {
   }
 };
 
+Pyramid.propTypes = {
+  rankDate: PropTypes.object.isRequired,
+  rankings: PropTypes.array.isRequired,
+};
+
 export default createContainer(({rankDate}) => {
   Meteor.subscribe("atp_men_singles_ranking", rankDate);
 
