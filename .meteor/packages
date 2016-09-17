@@ -33,4 +33,10 @@ shell-server
 
 
 
+
+react-meteor-data
+ecmascript
+es5-shim
+
+
 npm-container

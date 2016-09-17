@@ -1,6 +1,12 @@
+import { Meteor } from 'meteor/meteor';
+
+import cheerio from 'cheerio';
+
+import { MenSingles, RankingDates } from './collections.js';
 
 Meteor.methods({
     'refreshRankingDates': function() {
+      console.log('refreshRankingDates');
         var url = 'http://www.atpworldtour.com/en/rankings/singles';
         HTTP.get(
             url,

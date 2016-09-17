@@ -23,6 +23,7 @@ diff-sequence@1.0.6
 ecmascript@0.5.8
 ecmascript-runtime@0.3.14
 ejson@1.0.12
+es5-shim@4.6.14
 fastclick@1.0.12
 geojson-utils@1.0.9
 hot-code-push@1.0.4
@@ -54,6 +55,7 @@ observe-sequence@1.0.12
 ordered-dict@1.0.8
 promise@0.8.7
 random@1.0.10
+react-meteor-data@0.2.9
 reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.10
@@ -69,6 +71,7 @@ templating@1.2.15
 templating-compiler@1.2.15
 templating-runtime@1.2.15
 templating-tools@1.0.5
+tmeasday:check-npm-versions@0.2.0
 tracker@1.1.0
 twbs:bootstrap@3.3.6
 ui@1.0.12
