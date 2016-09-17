@@ -7,8 +7,12 @@
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "d3": "3.5.17",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.0",
     "react": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "underscore.string": "^3.3.4"
   }
 }

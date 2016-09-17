@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import moment from 'moment';
+
 import { MenSingles, RankingDates } from '../api/collections.js';
 
 import Pyramid from './visualizations/Pyramid.js';

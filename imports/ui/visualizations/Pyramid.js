@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
+import d3 from 'd3';
+
 import { MenSingles } from '../../api/collections.js';
 
 const margin = {top: 10, right: 40, bottom: 10, left: 40},

@@ -1,6 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 
 import cheerio from 'cheerio';
+import _ from 'lodash';
+import s from 'underscore.string';
+import moment from 'moment';
 
 import { MenSingles, RankingDates } from './collections.js';
 
@@ -49,8 +52,7 @@ Meteor.methods({
                     return;
                 }
                 $ = cheerio.load(result.content);
-                //var _ = Meteor.npmRequire('underscore');  // force usage of underscore 1.8.3 from NPM for unzip
-                var records = _.map(_.zip.apply(_, [
+                var records = _.map(_.unzip([
                     $('.rank-cell'),
                     $('.country-cell img'),
                     $('.player-cell'),
