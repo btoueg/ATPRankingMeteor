@@ -4,14 +4,33 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 twbs:bootstrap
 d3js:d3
 csats:csv-parse
 momentjs:moment
 underscorestring:underscore.string
-http
+http@1.2.9
 meteorhacks:npm
+
+
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+standard-minifier-css
+standard-minifier-js
+shell-server
+
+
 
 
 npm-container

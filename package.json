@@ -1,0 +1,11 @@
+{
+  "name": "ATPRanking",
+  "author": "Benjamin Toueg",
+  "version": "1.0.0",
+  "description": "Hey",
+  "repository": "github:btoueg/ATPRankingMeteor",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {
+    "cheerio": "^0.22.0"
+  }
+}
