@@ -86,7 +86,7 @@ class Pyramid extends Component {
     new_images.transition().duration(1500).attr('opacity', 1);
     images.exit().remove();
 
-    function highlight_country(element) {
+    const highlight_country = (element) => {
         this.svg.selectAll("image")
             .transition()
             .duration(1500)
@@ -98,7 +98,7 @@ class Pyramid extends Component {
             .attr({
                 "opacity": 1
             });
-    }
+    };
   }
 
   render() {
